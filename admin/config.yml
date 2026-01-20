@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main   # или master, если твой git другой
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+locale: "hy"
+
+collections:
+  - name: "site"
+    label: "Main Page Content"
+    files:
+      - file: "content/site.json"
+        label: "Site JSON"
+        name: "site"
+        fields:
+          - label: "_meta"
+            name: "_meta"
+            widget: "object"
+            fields:
+              - { label: "Default language", name: "defaultLang", widget: "string" }
+              - label: "Supported languages"
+                name: "supported"
+                widget: "list"
+                field: { label: "Language code", name: "code", widget: "string" }
+              - label: "Labels"
+                name: "labels"
+                widget: "object"
+                fields:
+                  - { label: "Հայ", name: "hy", widget: "string" }
+                  - { label: "EN", name: "en", widget: "string" }
+                  - { label: "РУ", name: "ru", widget: "string" }
+
+          - label: "Languages"
+            name: "languages"
+            widget: "list"
+            default: ["hy","en","ru"]
+            fields:
+              - label: "Language code"
+                name: "lang"
+                widget: "string"
+              - label: "Content"
+                name: "content"
+                widget: "object"
+                field_structure:
+                  - label: "Text keys"
+                    name: "texts"
+                    widget: "object"
+                    additional_fields: true
