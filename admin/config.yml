@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main   # или master, если твой git другой
+  name: auth0
+  auth0_domain: dev-pf1g0q70femqvx2u.us.auth0.com
+  auth0_client_id: AJMS4MWwOdxbNcN0Ag0FNl1697iOOV2o
+  site_url: https://memorial-site.netlify.app
+  redirect_url: https://memorial-site.netlify.app/admin/
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
